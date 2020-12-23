@@ -200,8 +200,8 @@
     return [self clientCertsFromP12Data:pkcs12data passphrase:passphrase];
 }
 
-+ (NSArray *)clientCertsFromP12Data:(NSData *)p12data passphrase:(NSString *)passphrase {
-    if (!p12data) {
++ (NSArray *)clientCertsFromP12Data:(NSData *)p12Data passphrase:(NSString *)passphrase {
+    if (!p12Data) {
         DDLogWarn(@"[MQTTCFSocketTransport] no p12 data given");
         return nil;
     }
@@ -212,7 +212,7 @@
     }
     
     CFArrayRef keyref = NULL;
-    OSStatus importStatus = SecPKCS12Import((__bridge CFDataRef)p12data,
+    OSStatus importStatus = SecPKCS12Import((__bridge CFDataRef)p12Data,
                                             (__bridge CFDictionaryRef)@{(__bridge id)kSecImportExportPassphrase: passphrase},
                                             &keyref);
     if (importStatus != noErr) {

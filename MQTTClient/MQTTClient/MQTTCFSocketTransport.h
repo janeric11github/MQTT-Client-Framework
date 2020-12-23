@@ -101,6 +101,6 @@
  @endcode
  
  */
-+ (NSArray *)clientCertsFromP12Data:(NSData *)p12data passphrase:(NSString *)passphrase;
++ (NSArray *)clientCertsFromP12Data:(NSData *)p12Data passphrase:(NSString *)passphrase;
 
 @end
